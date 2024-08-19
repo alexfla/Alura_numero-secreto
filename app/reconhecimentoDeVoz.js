@@ -1,5 +1,5 @@
 
-const elementoChute = document.getElementById(chute)
+const elementoChute = document.getElementById('chute')
 
 window.SpeechRecognition = window.SpeechRecognition || webkitSpeechRecognition;
 
@@ -12,6 +12,7 @@ recognition.addEventListner('result', onSpeak);
 function onSpeak(e) {
     chute = e.results[0][0].trascript
     exibeChuteNaTela(chute)
+    verficaSeOChutePossuiUmValorValido (chute)
 }
 
 function exibeChuteNaTela (chute) {
