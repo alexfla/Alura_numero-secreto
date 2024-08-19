@@ -15,6 +15,8 @@ function verficaSeOChutePossuiUmValorValido(chute){
             <h2>Vovê acertou!!</h2>
             <h3>O número secreto ra ${"numeroSecreto"}</h3>
 
+            <button id="jogar-novamente" class="btn-jogar">Jogar Novamente</button>
+
         `
     } else if (numero > numeroSecreto) {
         elementoChute.innerHTML += `
@@ -29,6 +31,7 @@ function verficaSeOChutePossuiUmValorValido(chute){
 
 }
 
+}
 function chuteForInvalido(numero) {
     return Number.isNaN(numero)
 }
@@ -36,3 +39,9 @@ function chuteForInvalido(numero) {
 function numeroForMaiorOuMenorQueoPermitido (numero) {
     return numero > maiorValor || numero < menorValor
 }
+
+document.body.addEventListener('click', e => {
+    if(e.target.id == 'jogar-novamente') {
+        window.location.reload()
+    }
+})
